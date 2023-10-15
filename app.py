@@ -5,6 +5,10 @@ from streamlit_lottie import st_lottie
 
 st.set_page_config(page_title="Suryateja | Devfolio", page_icon=":tada:", layout="wide")
 
+# Load CSS
+css_file = "styles/main.css"
+with open(css_file) as f:
+    st.markdown("<style>{}</style>".format(f.read()), unsafe_allow_html=True)
 
 def load_lottie_url(url):
     r = requests.get(url)
@@ -19,13 +23,13 @@ cocktail = load_lottie_url("https://lottie.host/2407930d-41c8-447f-ac6e-47089760
 passion = load_lottie_url("https://lottie.host/02be80b8-cfbc-454d-b79a-dc5f6cfa3367/a5BMgdIUWt.json")
 hack = load_lottie_url("https://lottie.host/3a4fc800-ca4d-4d0b-a5aa-e094f6c39f2b/Ro4wYU0Tvb.json")
 graph = load_lottie_url("https://lottie.host/b9b39243-43f2-42fd-acb9-b65ad93e49e4/URUlBtR9jo.json")
-
 soon = load_lottie_url("https://lottie.host/ed1f42d6-e602-4031-ae82-e5a0d3c37797/93yWIWub4Z.json")
+book = load_lottie_url("https://lottie.host/399eeb47-f907-41ff-b741-6df3b88f19e3/OmoDhahUpN.json")
+oss = load_lottie_url("https://lottie.host/f0339fdd-342f-4813-aa3e-2bba2af60a90/r9g9k8pYc8.json")
 
-test_img = Image.open("assets/test.png")
-conf1 = Image.open("assets/IEEE1.jpg")
+profile = Image.open("assets/profile.png")
+
 conf2 = Image.open("assets/IEEE2.jpg")
-conf3 = Image.open("assets/IEEE3.jpg")
 conf4 = Image.open("assets/IEEE4.jpg")
 
 ws1 = Image.open("assets/ws1.jpg")
@@ -38,21 +42,26 @@ ws6 = Image.open("assets/ws5.jpg")
 teach1 = Image.open("assets/Teach1.png")
 teach2 = Image.open("assets/Teach2.png")
 
+holopin = Image.open("assets/holopin.png")
+
+coming_soon = Image.open("assets/giphy.gif")
+kmeans = Image.open("assets/kmeans.PNG")
+
+
 # Header
 with st.container():
     info_column, img_column = st.columns((3, 1))
     with info_column:
         st.title("SURYATEJA CHALLA")
-        st.subheader("Comp Sci Undergrad | M.L. researcher")
-        linkedin, github, mail = st.columns(3)
+        st.markdown("##### Comp Sci Undergrad • Academic Researcher • ML Fanatic")
+        st.write("##")
+        linkedin, github = st.columns(2)
         with linkedin:
-            st.write("[LinkedIn](https://linkedin.com/in/suryatejachalla)")
+            st.subheader("[LinkedIn](https://linkedin.com/in/suryatejachalla)")
         with github:
-            st.write("[Github](https://github.com/in/suryateja-challa)")
-        with mail:
-            st.write("[Mail](mailto:challasuryateja29@gmail.com)")
+            st.subheader("[Github](https://github.com/suryateja-challa)")
     with img_column:
-        st.image(test_img, width=200)
+        st.image(profile)
 
 
 # What I do
@@ -64,11 +73,11 @@ with st.container():
         st.markdown("#### I'm Suryateja :wave:")
         st.markdown(
             """
-            - ##### 💠 Second year undergraduate in Computer Science 💻
-            - ##### 💠 I do competitive programming as a hobby and a sport 👨‍💻
-            - ##### 💠 Academic research is my intellectual playground 🔬
-            - ##### 💠 Nothing steals my attention more than a new Deep Learning model 🤖
-            - ##### 💠 I love to play badminton 🏸 and occasionally play volleyball 🏐
+            - ###### 💠 Second year undergraduate in Computer Science 💻
+            - ###### 💠 I do competitive programming as a hobby and a sport 👨‍💻
+            - ###### 💠 Academic research is my intellectual playground 🔬
+            - ###### 💠 Nothing steals my attention more than a new Deep Learning model 🤖
+            - ###### 💠 I love to play badminton 🏸 and occasionally play volleyball 🏐
             """
         )
     with right_column:
@@ -137,9 +146,12 @@ with st.container():
         st_lottie(passion, key="passion")
 
     with content:
-        st.markdown("### ```if(dreams && action): future='limitless'```")
-        st.markdown("### ```else: life='static'```")
-        st.write("##")
+        st.write(
+            """
+            *Each extracurricular activity I embrace brings an unexpected and exciting plot twist to the storyline of
+             my life outside the classroom.*
+            """
+        )
         st.subheader("Sharing Knowledge is Fun")
 
     st.write(
@@ -182,22 +194,83 @@ with st.container():
     with col1:
         st_lottie(graph)
     with col2:
-        st.subheader("Teaching others has been fun")
+        st.subheader("Teaching others has been a joyride")
+    st.write(
+        """
+        From unraveling the intricacies of graph theory to demystifying the nuances of multi-threaded systems, my 
+        passion for teaching and knowledge sharing has always been my guiding principle.
+        """
+    )
+    text, gif= st.columns((8, 1))
+    with text:
+        st.markdown("#### *\"If you want to master something, teach it. The more you teach, the better you learn.*\"")
+        st.markdown("##### - Prof. Richard Feynman")
+    with gif:
+        st_lottie(book)
+    left, right = st.columns(2)
+    with left:
+        st.image(teach2)
+    with right:
+        st.image(teach1)
+    st.write("##")
+    content, gif = st.columns((10, 2))
+    with gif:
+        st_lottie(oss)
+        st.write("[My Holopin board](https://www.holopin.io/@suryatejachalla#)")
+    with content:
+        st.subheader("Open-source Odyssey: **Hacktoberfest**")
+        st.image(holopin)
+
 
 # Projects
 with st.container():
     st.write("---")
-    st.header("Passions Projects in Focus")
+    st.title("I'm Working on... 🚀")
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(test_img)
+        st.image("https://i.giphy.com/media/oFDSjMfe11iiOgQRfY/giphy.webp", width=300)
     with text_column:
-        st.subheader("GeoHerb")
+        st.header("GeoHerb")
         st.write(
             """
-            - Uses that
-            - Does this
-            - You get it
+            - 🔹 Utilizes geospatial and soil data along with ML algorithms to find optimal medicinal herb growth location
+            - 🔹 QGIS is the software used to perform feature extraction on the geospatial vector files
+            - 🔹 GeoPandas and Fiona are major Python libraries used in handling the geo-data
+            - 🔹 Decision tree-based models are implemented for effective classification of soil and regions
+            - 🔹 An impressive classification accuracy of 99.8% has been achieved 
             """
         )
-        st.markdown("[Check out the project](https://www.google.com)")
+        st.markdown("#### The project will be made open-source after the paper is published.")
+
+    st.write("##")
+    text_column, image_column = st.columns((2, 1))
+    with image_column:
+        st.image("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTVicGRwYnhqMWlzNjlvNW16ZGY5aGliNjUycWl1NXRsazF0bmpkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TLeLKUdIc1tvAxb7ab/giphy.gif", width=300)
+    with text_column:
+        st.header("Sign Language Translator")
+        st.write(
+            """
+            - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible
+            - 🔹 OpenCV, a powerful computer vision library, is used to capture and process a live gestures video feed.
+            - 🔹 TensorFlow, a machine learning framework, is employed to train and fine-tune a neural network model.
+            - 🔹 Transfer learning with MobileNet SSD for efficient sign language recognition, minimizing data and training requirements.
+            """
+        )
+
+    st.write("##")
+    image_column, text_column = st.columns((1, 2))
+    with image_column:
+        st.image(kmeans)
+    with text_column:
+        st.markdown("## [Image Clustering from Scratch](https://github.com/suryateja-challa/KMeans-Segmentation-from-Scratch)")
+        st.write(
+            """
+            - 🔹 Implemented k-Means algorithm for image clustering from scratch
+            - 🔹 The project deployed on a Flask web-app
+            - 🔹 Allows user(s) to upload an image and select the number of cluster
+            - 🔹 The project uses ~85% fewer lines of code compared to *scikit-learn*
+            """
+        )
+
+st.write("##")
+st.write("Last updated: 15 oct, 2023")
