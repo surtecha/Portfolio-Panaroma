@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_lottie import st_lottie
 
-st.set_page_config(page_title="Suryateja | Devfolio", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Suryateja | Devfolio", page_icon="👨‍💻", layout="wide")
 
 # Load CSS
 css_file = "styles/main.css"
@@ -274,4 +274,4 @@ with st.container():
         )
 
 st.write("##")
-st.write("Last updated: 15 oct, 2023")
+st.write("Last updated: 15 Oct, 2023")
