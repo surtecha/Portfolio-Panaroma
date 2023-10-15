@@ -1,4 +1,4 @@
-PYTHON_VERSION = 3.11.4
+PYTHON_VERSION == 3.11.4
 Pillow==10.1.0
 Requests==2.31.0
 streamlit==1.27.2
