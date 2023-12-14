@@ -60,7 +60,7 @@ with st.container():
         with linkedin:
             st.subheader("[LinkedIn](https://linkedin.com/in/suryatejachalla)")
         with github:
-            st.subheader("[Github](https://github.com/suryateja-challa)")
+            st.subheader("[Github](https://github.com/surtecha)")
     with img_column:
         st.image(profile)
 
@@ -74,7 +74,7 @@ with st.container():
         st.markdown("#### I'm Suryateja :wave:")
         st.markdown(
             """
-            - ###### 💠 Second year undergraduate in Computer Science 💻
+            - ###### 💠 Third year undergraduate in Computer Science 💻
             - ###### 💠 I do competitive programming as a hobby and a sport 👨‍💻
             - ###### 💠 Academic research is my intellectual playground 🔬
             - ###### 💠 Nothing steals my attention more than a new Deep Learning model 🤖
@@ -238,7 +238,7 @@ with st.container():
             - 🔹 QGIS is the software used to perform feature extraction on the geospatial vector files
             - 🔹 GeoPandas and Fiona are major Python libraries used in handling the geo-data
             - 🔹 Decision tree-based models are implemented for effective classification of soil and regions
-            - 🔹 An impressive classification accuracy of 99.8% has been achieved 
+            - 🔹 An impressive classification accuracy of 98.7% has been achieved 
             """
         )
         st.markdown("#### The project will be made open-source after the paper is published.")
@@ -248,7 +248,7 @@ with st.container():
     with image_column:
         st.image("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTVicGRwYnhqMWlzNjlvNW16ZGY5aGliNjUycWl1NXRsazF0bmpkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TLeLKUdIc1tvAxb7ab/giphy.gif", width=300)
     with text_column:
-        st.header("Sign Language Translator")
+        st.header("SignLangNET")
         st.write(
             """
             - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible
@@ -263,15 +263,15 @@ with st.container():
     with image_column:
         st.image(kmeans)
     with text_column:
-        st.markdown("## [Image Clustering from Scratch](https://github.com/suryateja-challa/KMeans-Segmentation-from-Scratch)")
+        st.markdown("## [ClusterCraft](https://github.com/surtecha/ClusterCraft)")
         st.write(
             """
             - 🔹 Implemented k-Means algorithm for image clustering from scratch
-            - 🔹 The project deployed on a Flask web-app
+            - 🔹 The project is deployed on a Flask web-app
             - 🔹 Allows user(s) to upload an image and select the number of cluster
-            - 🔹 The project uses ~85% fewer lines of code compared to *scikit-learn*
+            - 🔹 Attracted 3 contributors during Hacktoberfest, fostering open-source engagement in ClusterCraft's development, by allowing new contributors to enhance skills in image clustering.
             """
         )
 
 st.write("##")
-st.write("Last updated: 15 Oct, 2023")
+st.write("Last updated: 14 Dec, 2023")
