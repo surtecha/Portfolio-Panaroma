@@ -3,7 +3,7 @@ import streamlit as st
 from PIL import Image
 from streamlit_lottie import st_lottie
 
-st.set_page_config(page_title="Suryateja | Devfolio", page_icon="👨‍💻", layout="wide")
+st.set_page_config(page_title="Suryateja | Devfolio", page_icon="🧑🏻‍💻", layout="wide")
 
 # Load CSS
 css_file = "styles/main.css"
@@ -223,55 +223,75 @@ with st.container():
         st.image(holopin)
 
 
-# Projects
+# Interactive Projects Section
 with st.container():
     st.write("---")
     st.title("I'm Working on... 🚀")
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        st.image("https://i.giphy.com/media/oFDSjMfe11iiOgQRfY/giphy.webp", width=300)
-    with text_column:
-        st.header("GeoHerb")
-        st.write(
-            """
-            - 🔹 Utilizes geospatial and soil data along with ML algorithms to find optimal medicinal herb growth location
-            - 🔹 QGIS is the software used to perform feature extraction on the geospatial vector files
-            - 🔹 GeoPandas and Fiona are major Python libraries used in handling the geo-data
-            - 🔹 Decision tree-based models are implemented for effective classification of soil and regions
-            - 🔹 An impressive classification accuracy of 98.7% has been achieved 
-            """
-        )
-        st.markdown("#### The project will be made open-source after the paper is published.")
 
-    st.write("##")
-    text_column, image_column = st.columns((2, 1))
-    with image_column:
-        st.image("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTVicGRwYnhqMWlzNjlvNW16ZGY5aGliNjUycWl1NXRsazF0bmpkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TLeLKUdIc1tvAxb7ab/giphy.gif", width=300)
-    with text_column:
+    # Creating Tabs for Each Project
+    project1, project2, project3 = st.tabs(["GeoHerb", "SignLangNET", "ClusterCraft"])
+
+    with project1:
+        st.header("GeoHerb")
+
+        col1, col2 = st.columns([2, 1])  
+
+        with col1:
+            st.write(
+                """
+                - 🔹 Utilizes geospatial and soil data along with ML algorithms to find optimal medicinal herb growth location.
+                - 🔹 QGIS is the software used to perform feature extraction on the geospatial vector files.
+                - 🔹 GeoPandas and Fiona are major Python libraries used in handling the geo-data.
+                - 🔹 Decision tree-based models are implemented for effective classification of soil and regions.
+                - 🔹 An impressive classification accuracy of 98.7% has been achieved.
+                """
+            )
+            st.markdown("#### The project will be made open-source after the paper is published.")
+        
+        with col2:
+            # Using the provided GIF URL
+            st.image("https://i.giphy.com/media/oFDSjMfe11iiOgQRfY/giphy.webp", width=300)
+
+    st.write("##")  # Space before next project
+
+
+
+    with project2:
         st.header("SignLangNET")
         st.write(
             """
-            - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible
+            - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible.
             - 🔹 OpenCV, a powerful computer vision library, is used to capture and process a live gestures video feed.
             - 🔹 TensorFlow, a machine learning framework, is employed to train and fine-tune a neural network model.
-            - 🔹 Transfer learning with MobileNet SSD for efficient sign language recognition, minimizing data and training requirements.
+            - 🔹 Transfer learning with MobileNet SSD for efficient sign language recognition.
             """
         )
+        progress = 75  # Static progress value
+        st.progress(progress)
+        st.write(f"Development Progress: {progress}%")
+        st.image("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTVicGRwYnhqMWlzNjlvNW16ZGY5aGliNjUycWl1NXRsazF0bmpkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TLeLKUdIc1tvAxb7ab/giphy.gif", width=300)
 
-    st.write("##")
-    image_column, text_column = st.columns((1, 2))
-    with image_column:
-        st.image(kmeans)
-    with text_column:
-        st.markdown("## [ClusterCraft](https://github.com/surtecha/ClusterCraft)")
-        st.write(
-            """
-            - 🔹 Implemented k-Means algorithm for image clustering from scratch
-            - 🔹 The project is deployed on a Flask web-app
-            - 🔹 Allows user(s) to upload an image and select the number of cluster
-            - 🔹 Attracted 3 contributors during Hacktoberfest, fostering open-source engagement in ClusterCraft's development, by allowing new contributors to enhance skills in image clustering.
-            """
-        )
+    with project3:
+        st.header("ClusterCraft")
+
+        col1, col2 = st.columns([2, 1])  
+
+        with col1:
+            st.write(
+                """
+                - 🔹 Implemented k-Means algorithm for image clustering from scratch.
+                - 🔹 The project is deployed on a Flask web-app.
+                - 🔹 Allows users to upload an image and select the number of clusters.
+                - 🔹 Attracted 3 contributors during Hacktoberfest.
+                """
+            )
+            st.markdown("[View ClusterCraft on GitHub](https://github.com/surtecha/ClusterCraft)", unsafe_allow_html=True)
+
+        with col2:
+            st.image(kmeans, caption='Image clustering using k-Means algorithm')
+
+        st.write("##") 
+
 
 st.write("##")
-st.write("Last updated: 14 Dec, 2023")
+st.write("Last updated: 15 Jan, 2024")
