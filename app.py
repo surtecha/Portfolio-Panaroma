@@ -48,6 +48,13 @@ holopin = Image.open("assets/holopin.png")
 coming_soon = Image.open("assets/giphy.gif")
 kmeans = Image.open("assets/kmeans.PNG")
 
+SLN = Image.open("assets/SLN.png")
+
+nature = Image.open("assets/nature_logo.jpeg")
+
+journl_img1 = Image.open("assets/journal_img1.png")
+journl_img2 = Image.open("assets/journal_img2.png")
+
 
 # Header
 with st.container():
@@ -126,16 +133,26 @@ with st.container():
     with right:
         st.image(conf4, width=328)
 
+    st.write("---")
+
     st.write("##")
-    st.header("Project GeoHerb")
-    st.markdown("##### This paper is currently under review")
+    st.write("##")
+    st.subheader("Nature Publication")
+    st.markdown("##### [\"Mapping of soil suitability for medicinal plants using machine learning methods\"]"
+                "(https://www.nature.com/articles/s41598-024-54465-3)")
+    col1, col2 = st.columns(2)
+    with col1:
+        st.image(journl_img1, width=500)
+    with col2:
+        st.image(journl_img2, width=700)
+    st.write("##")
+    st.markdown("##### The paper has been accepted for publication in the prestigious journal, *Scientific Reports* of the *Nature* group 🎉")
     st.write("""
         An extension to our work on conservation of medicinal herbs. The project utilized a choropleth-based 
         visualization technique to determine the most well-suited geographic location to repopulate vulnerable medicinal 
         herbs.
     """)
     st.markdown("##### The proposed system has a state-of-the-art classification accuracy of **98.7%**")
-    st_lottie(soon, width=180, key="coming_soon")
 
 
 # Extra curricular activities
@@ -226,7 +243,7 @@ with st.container():
 # Interactive Projects Section
 with st.container():
     st.write("---")
-    st.title("I'm Working on... 🚀")
+    st.title("My passion projects 🚀")
 
     # Creating Tabs for Each Project
     project1, project2, project3 = st.tabs(["GeoHerb", "SignLangNET", "ClusterCraft"])
@@ -246,30 +263,33 @@ with st.container():
                 - 🔹 An impressive classification accuracy of 98.7% has been achieved.
                 """
             )
-            st.markdown("#### The project will be made open-source after the paper is published.")
+            st.markdown("#### [\"Read my article\"]"
+                "(https://www.nature.com/articles/s41598-024-54465-3)")
         
         with col2:
-            # Using the provided GIF URL
-            st.image("https://i.giphy.com/media/oFDSjMfe11iiOgQRfY/giphy.webp", width=300)
+            st.image(nature, width=300)
 
-    st.write("##")  # Space before next project
-
+    st.write("##")  
 
 
     with project2:
         st.header("SignLangNET")
-        st.write(
-            """
-            - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible.
-            - 🔹 OpenCV, a powerful computer vision library, is used to capture and process a live gestures video feed.
-            - 🔹 TensorFlow, a machine learning framework, is employed to train and fine-tune a neural network model.
-            - 🔹 Transfer learning with MobileNet SSD for efficient sign language recognition.
-            """
-        )
-        progress = 75  # Static progress value
-        st.progress(progress)
-        st.write(f"Development Progress: {progress}%")
-        st.image("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTVicGRwYnhqMWlzNjlvNW16ZGY5aGliNjUycWl1NXRsazF0bmpkeSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/TLeLKUdIc1tvAxb7ab/giphy.gif", width=300)
+        
+        col1, col2 = st.columns([2, 1])
+
+        with col1:
+            st.write(
+                """
+                - 🔹 A system that can instantly recognize sign language gestures, making communication more accessible.
+                - 🔹 OpenCV, a powerful computer vision library, is used to capture and process a live gestures video feed.
+                - 🔹 The model utilizes an LSTM based neural network architecture.
+                """
+            )
+            st.markdown("#### The model will be trained on a larger dataset to improve accuracy in a future update.")
+            st.markdown("[View SignLangNET on GitHub](https://github.com/surtecha/SignLangNET)", unsafe_allow_html=True)
+
+        with col2:
+            st.image(SLN, caption='SignLangNET')
 
     with project3:
         st.header("ClusterCraft")
@@ -294,4 +314,4 @@ with st.container():
 
 
 st.write("##")
-st.write("Last updated: 15 Jan, 2024")
+st.write("Last updated: 3 Apr, 2024")
