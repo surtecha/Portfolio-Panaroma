@@ -63,11 +63,15 @@ with st.container():
         st.title("SURYATEJA CHALLA")
         st.markdown("##### Comp Sci Undergrad • Academic Researcher • ML Fanatic")
         st.write("##")
-        linkedin, github = st.columns(2)
+        linkedin, github, x, instagram = st.columns(4)
         with linkedin:
             st.subheader("[LinkedIn](https://linkedin.com/in/suryatejachalla)")
         with github:
             st.subheader("[Github](https://github.com/surtecha)")
+        with x:
+            st.subheader("[𝕏](https://twitter.com/surtecha)")
+        with instagram:
+            st.subheader("[Instagram](https://instagram.com/surtecha)")
     with img_column:
         st.image(profile)
 
